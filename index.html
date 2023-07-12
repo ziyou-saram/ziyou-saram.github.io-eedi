@@ -32,30 +32,74 @@
                         </svg>
                     </button>
                 </div>
-                <button type="button" class="md:hidden text-[#2D2534] bg-[#B4DBFF] font-medium rounded-lg text-md px-4 py-2 text-center mr-3 md:mr-0">Языки</button>
-                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-                    <ul class="flex md:items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-12 md:mt-0 md:border-0 md:bg-white">
-                        <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Об Институте</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Деятельность</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Пресс-центр</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Закупки</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Вакансии Контакты</a>
-                        </li>
-                        <li>
-                            <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Контакты</a>
-                        </li>
-                        <button type="button" class=" text-[#2D2534] bg-[#B4DBFF] font-medium rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0">Языки</button>
-                    </ul>
+                <div class="relative" x-data="{ open: false }">
+                    <button @click="open = ! open" aria-expanded="false" type="button" class="md:hidden inline-flex items-center text-[#2D2534] bg-[#B4DBFF] font-medium rounded-lg text-md px-4 py-2 text-center mr-3 md:mr-0">
+                        <span>Языки</span>
+                        <svg :class="{'rotate-180 duration-300': open, 'duration-300' : !open}" class="text-gray-700 ml-2 h-5 w-5 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+
+                    <div 
+            x-show="open" 
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-200"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-90"
+            class="absolute left-1/2 z-full mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
+
+            <div class="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
+            <div class="relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
+                <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                
+                <div class="ml-4">
+                    <p class="text-base font-medium text-gray-900">Русский</p>
                 </div>
+                </a>
+
+                <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                <div class="ml-4">
+                    <p class="text-base font-medium text-gray-900">Qazaq Tili</p>
+                </div>
+                </a>
+
+                <a href="#" class="-m-3 flex items-start rounded-lg p-3 hover:bg-gray-50">
+                
+                <div class="ml-4">
+                    <p class="text-base font-medium text-gray-900">English</p>
+                </div>
+                </a>
+            </div>
+            </div>
+        </div>
+                </div>
+    
+                    
+                    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                        <ul class="flex md:items-center flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-12 md:mt-0 md:border-0 md:bg-white">
+                            <li>
+                                <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Об Институте</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Деятельность</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Пресс-центр</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Закупки</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Вакансии Контакты</a>
+                            </li>
+                            <li>
+                                <a href="#" class="block py-2 pl-3 pr-4 text-[#2D2534] font-medium text-md rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-600 md:p-0">Контакты</a>
+                            </li>
+                            <button type="button" class="hidden md:block text-[#2D2534] bg-[#B4DBFF] font-medium rounded-lg text-lg px-4 py-2 text-center mr-3 md:mr-0">Языки</button>
+                        </ul>
+                    </div>
             </div>
         </nav>
     </section>
